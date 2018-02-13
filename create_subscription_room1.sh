@@ -19,7 +19,7 @@ curl -v ${ORION_EP}/v2/subscriptions -s -S --header 'Content-Type: application/j
   },
   "notification": {
     "http": {
-      "url": "http://<ENDPOINT_FOR_SUBSCRIPTIONS>"
+      "url": "http://<HOSTNAME>:5000/1hqqe3f1"
     },
     "attrs": [
       "temperature"
