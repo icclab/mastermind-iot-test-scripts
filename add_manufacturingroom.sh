@@ -2,14 +2,14 @@
 
 curl http://${ORION_EP}/v2/entities -s -S --header 'Content-Type: application/json' -d @- <<EOF
 {
-  "id": "Room2",
+  "id": "ManufacturingRoom",
   "type": "Room",
   "temperature": {
-    "value": 21,
+    "value": 25,
     "type": "Float"
   },
-  "pressure": {
-    "value": 711,
+  "humidity": {
+    "value": 50,
     "type": "Integer"
   }
 }

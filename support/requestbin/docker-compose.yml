@@ -1,0 +1,17 @@
+web:
+  #build: .
+  image: agaveapi/requestbin:master
+  ports:
+    - "5000:5000"
+  links:
+   - redis
+  environment:
+   - 'STORAGE_BACKEND=requestbin.storage.redis.RedisStorage'
+   - 'REDIS_URL=redis://redis:6379/0'
+redis:
+  image: redis:2.8
+  expose:
+    - "6379"
+  volumes:
+   - ./redis_cache:/data
+

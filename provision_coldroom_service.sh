@@ -5,7 +5,7 @@ curl -X POST -H "Fiware-Service: myHome" -H "Fiware-ServicePath: /environment" -
       {
           "resource": "",
           "apikey": "AAFF9977",
-          "type": "potSensor"
+          "type": "TempSensor"
       }
     ]
 }

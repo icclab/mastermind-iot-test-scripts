@@ -4,71 +4,71 @@ echo "*** Initializing variables..."
 source ./setup.sh
 
 echo
-echo "*** Adding room 1..."
-./add_room1.sh
+echo "*** Adding cold room..."
+./add_coldroom.sh
 
 echo
-echo "*** Querying room 1..."
-./query_room1.sh
+echo "*** Querying cold room..."
+./query_coldroom.sh
 
 echo
-echo "*** Querying specific item from room 1..."
-./query_room1_specific.sh
+echo "*** Querying specific items from cold room..."
+./query_coldroom_specific.sh
 
 echo
-echo "*** Adding room 2..."
-./add_room2.sh
+echo "*** Adding Manufacturing room..."
+./add_manufacturingroom.sh
 
 echo
-echo "*** Querying room 2..."
-./query_room2.sh
+echo "*** Querying Manufacturing room..."
+./query_manufacturingroom.sh
 
 echo
-echo "*** Getting entities..."
+echo "*** Getting entities from Context Broker..."
 ./get_entities.sh
 
 echo
-echo "*** Updating room 1..."
-./update_room1.sh
+echo "*** Updating Cold room data..."
+./update_coldroom.sh
 
 echo
-echo "*** Querying room 1..."
-./query_room1.sh
+echo "*** Querying Cold room (updated)..."
+./query_coldroom.sh
 
 echo
-echo "*** Updating attribute..."
-./update_attribute.sh
+echo "*** Updating Cold room attribute..."
+./update_coldroom_attr.sh
 
 echo
-echo "*** Querying room 1..."
-./query_room1.sh
+echo "*** Querying Cold room..."
+./query_coldroom.sh
 
 echo
-echo "*** Provisioning pot service..."
-./provision_pot_service.sh
+echo "*** Provisioning Cold Room Temp sensor (service)..."
+./provision_coldroom_service.sh
 
 echo
-echo "*** Provisioning pot device..."
-./provision_pot_device.sh
+echo "*** Provisioning Cold Room Temp sensor (device)..."
+./provision_coldroom_device.sh
 
 echo
-echo "*** Getting devices..."
+echo "*** Getting registered devices..."
 ./get_devices.sh
 
 echo
-echo "*** Querying device..."
-./query_rose_pot.sh
+echo "*** Querying ColdRoom device..."
+./query_coldroom_sensor.sh
 
 echo
 echo "*** A bit tired...having a little rest..."
 sleep 10
 
-mosquitto_pub -h ${IOTA_HOST} -t /AAFF9977/sensor01/attrs/humidity -m '76'
-mosquitto_pub -h ${IOTA_HOST} -t /AAFF9977/sensor01/attrs/happiness -m 'Delirious'
+mosquitto_pub -h ${IOTA_HOST} -t /AAFF9977/sensor01/attrs/temperature -m '21'
+mosquitto_pub -h ${IOTA_HOST} -t /AAFF9977/sensor01/attrs/humidity -m '35'
 
 echo
-echo "*** Querying device..."
-./query_rose_pot.sh
+echo "*** Querying Cold Room device again..."
+./query_coldroom_sensor.sh
 
 echo "Finished...if the devices were not updated correctly, you may need to run the mosquitto_pub commands again..."
 

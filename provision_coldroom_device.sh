@@ -4,16 +4,16 @@ curl -X POST -H "Fiware-Service: myHome" -H "Fiware-ServicePath: /environment" -
     "devices": [ 
         { 
             "device_id": "sensor01", 
-            "entity_name": "RosesPot", 
-            "entity_type": "potSensor",
+            "entity_name": "ColdRoomSensor", 
+            "entity_type": "TempSensor",
             "attributes": [
               {
-                "name": "humidity",
+                "name": "temperature",
                 "type": "degrees"
               },
               {
-                "name": "happiness",
-                "type": "subjective"
+                "name": "humidity",
+                "type": "percentage"
               }
             ]
         }
